@@ -1,10 +1,14 @@
 package edu.iu.p565.customerservice.model;
 
+import jakarta.validation.constraints.NotEmpty;
+
 import java.util.Objects;
 
 public class Customer {
-    private int id; 
+    private int id;
+    @NotEmpty(message = "Name is required")
     private String name;
+    @NotEmpty(message = "Email is required")
     private String email;
 
 
