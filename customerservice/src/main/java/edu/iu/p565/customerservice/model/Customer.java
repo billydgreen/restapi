@@ -3,8 +3,16 @@ package edu.iu.p565.customerservice.model;
 import jakarta.validation.constraints.NotEmpty;
 
 import java.util.Objects;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotEmpty;
 
+@Entity
 public class Customer {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @NotEmpty(message = "Name is required")
     private String name;
